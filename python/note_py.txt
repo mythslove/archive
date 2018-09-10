@@ -1,0 +1,240 @@
+
+import sys
+import random
+import json
+import re
+import socket
+from time import sleep
+
+"""
+"""
+在注释中使用中文，必须在.py文件的第一行加上# _*_ coding:utf-8 _*_，否则会报SyntaxError: Non-ASCII character... 异常
+# -*- coding=utf-8 -*-
+__author__ = 'MR.'
+
+import sys
+from *.* import class_name/fun_name as nick_name
+	from easydict import EasyDict as edict
+	__C = edict()
+
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
+if __name__ == '__main__':
+
+class my_class(object):
+    def __init__(self, params):#Constructor
+		pass
+
+@property
+def cdn(self):
+	return self._cdn
+
+@cdn.setter
+def cdn(self, cdn):
+	self._cdn = cdn
+
+for i in range(0, len(array)):
+for i in range(len(array)):
+
+
+--类型转换
+sys.maxint
+eval(repr(object)) == object
+int('0xa',16)
+int('1010',2)
+Tuple->List
+('My','name','is','Jmilk')->['My', 'name', 'is', 'Jmilk']
+String->Tuple
+'My'->('M','y')
+(List,Tuple)->Dictionary
+...
+dict([(key1,value1),..])
+list = ['name','age','city']
+tup = ('jmilk',23,'BJ')
+zip(li,tup)->[('name', 'jmilk'), ('age', 23), ('city', 'BJ')]
+dict(zip(li,tup))->{'age': 23, 'city': 'BJ', 'name': 'jmilk'}
+...
+
+exec(open('script.py').read())
+
+len(str(z ** 10))
+
+import time
+import datetime
+t = time.time()
+print (t)                       #原始时间数据
+print (int(t))                  #秒级时间戳
+print (int(round(t * 1000)))    #毫秒级时间戳
+
+nowTime = lambda:int(round(t * 1000))
+print (nowTime());              #毫秒级时间戳，基于lambda
+
+print (datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))   #日期格式化
+
+日期转为秒级时间戳
+dt = '2018-01-01 10:40:30'
+ts = int(time.mktime(time.strptime(dt, "%Y-%m-%d %H:%M:%S")))
+print (ts)
+
+秒级时间戳转为日期
+ts = 1515774430
+dt = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(ts))
+print(dt)
+
+ord('d') = 100 chr(100) = 'd'
+
+if scheme is not None:
+
+列表list[...]集合set{...}字典{'':''...}
+List列表解析
+
+按顺序遍历字典sorted(D)
+ks = list(D.keys()).sort()
+for k in ks:
+
+if测试不存在的键
+if not key in D:
+value = D.get('unknown',0)
+=>value = D['unknown'] if 'unknown' in D else 0
+
+data = open('data.bin','rb').read()
+
+type isinstance
+
+#print
+	print还可以结合字符串格式操作符来使用，可C语言中的printf类似。例如：
+		>>> print "%s is number %d!" % ("Python", 1)
+		Python is number 1!
+	“>>”用来重定向输出。例如：
+		>>> import sys
+		>>> print >> sys.stderr, 'Fatal error: invalid input!'
+		Fatal error: invalid input!#红色字
+	将输出重定向到日志文件：
+		>>> logfile = open('/tmp/log.txt','a')
+		>>> print >> logfile, 'Fatal error: invalid input!'
+		>>> logfile.close()
+#输入raw_input()
+	>>> num = raw_input('Enter a number: ')
+	Enter a number: 1024
+	>>> print 'Doubling your number: %d' % (int(num) *2)
+	Doubling your number: 2048
+#操作符
+	和其他大多数语言一样，python中的操作符也以同样的方式工作。
+	+   -   *    /   //   %   **
+	单斜杠除法用作传统除法，双斜杠除法用作浮点除法（对结果进行四舍五入）。双星号（**）表示乘方操作。它的优先级比加减乘除高。
+	python也有标准比较操作符：
+	<   <=   >    >=    ==    !=    <>
+	python支持两种不登操作：!=和<>。后者慢慢被淘汰，所以推荐使用前者。
+	python也支持逻辑操作符：
+	and or not
+	下面的操作在其他语言中时不被支持的，但python支持。
+	>>> 3 < 4 < 5
+	True
+	建议在使用操作符时加上括号，是的程序易读性更好。
+#变量名是大小写敏感
+#文件
+open(file_name,access_mode='r')
+access_mode为r读取，w写入，a追加。+读写，b二进制访问。默认为r。
+#异常
+	try:
+	except IOError, e:
+		print 'exception:',e
+#类继承
+	class class_name(base_class[es]):
+#变量命名：
+	1）必须以字符或下划线开头
+	2）以单下划线开头(_fo)表示不能直接访问的类属性，需要类提供的接口进行访问
+	3）以双下划线开头(__foo)的代表类的私有成员
+	4）以双下划线开头(__foo__)和结尾的代表python中特殊方法专用的标识，例如__init__()代表类的构造函数
+#全局变量
+	关键字 global
+	global _num	#引用全局变量
+#字符串函数
+	str():把值转换为合理形式的字符串，以便用户理解
+	repr()：创建一个字符串，以合法的python表达式的形式来表示值。
+	例如：
+	>>> print repr(123L)
+	123L
+	>>> print str(123L)
+	123
+#输入与输出
+	输出：print语句
+	输入：input()和raw_input()函数
+	input()将读入的用户数据默认为python表达式
+	raw_input()将读入的数据转换为字符串
+#True和False只是对1和0的一种唯美的修饰而已，实质是一样的
+	>>> True == 1
+	True
+	>>> False == 0
+	True
+#while
+	while i <= 5:
+	else:
+#for
+	array = [(1, 2), (3, 4), (5, 6)]
+	for (x, y) in array:
+		print(x, y)
+#迭代器
+	for line in open('test.txt'):
+		print line
+#并行迭代
+	names = ['admin', 'guest']
+	passwords = ['admin', 'guest']
+	for name, password in zip(names,passwords):
+		print("name: %s, password: %s" % (name, password))
+#编号迭代 enumerate的主要作用时在提供索引的地方迭代索引值对。
+	names = ['admin', 'guest']
+	for index, name in enumerate(names):
+		if 'admin' in name:
+			names[index] = 'root'
+			print("index: %s, name: %s" % (index, name))
+#包必须至少包含一个__init__.py文件，该文件的内容可以为空。__init__.py用于标识当前文件夹是一个包。
+#函数
+	#默认参数值：
+	def login(username="guest", password="guest"):
+	特殊调用login(password='admin')
+	#可变长度参数值：
+	def print_names(* names):
+	names是一个元组
+	#字典类型参数值
+	def print_key_value(** key_value):
+	key_value是一个字典
+#filter函数
+	过滤(删除)列表
+	def function_name(ele):
+	filter(function_name, sequence)
+#reduce()函数
+	实现连续处理的功能
+	reduce(function_name, sequence[ , initial])
+	initial:该参数是可选的，如果指定了该参数的值，则initial所指定的值将首先被传入function_name()函数中进行计算。如果sequence参数的值为空，则对initial所指定的值进行处理。
+		# 使用reduce()函数，对元组中的每一项进行计算，最后将结果返回
+		def multiply(x, y):
+			return x*y
+		print reduce(multiply, (1, 2, 3, 4, 5, 6))
+		print reduce(multiply, (7, 8), 5)
+		结果：720 280
+#map函数
+	map()函数可以对多个序列中的每个元素执行相同的操作，并返回一个与输入序列长读相同的列表。其中，每一个元素都是对输入序列中相应位置的元素转换的结果。
+	map(function_name, sequence[, sequence, ...])
+	如果传给map()的函数参数接受多个参数，那么就可以给map()传递多个序列，如果这些传进来的序列长度不一样，那么会在短的序列后面补None。
+	函数参数还可以是None，这时就会用序列参数中的元素生成一个元组的序列。
+#三目运算 1 if true else 0
+
+#浮点除法 math.trunc(5 / -2) = -2
+#整数不同进制表示0xFF 0o368 0b1011
+#整数不同进制字符串转换hex(64)oct(64)bin(64)
+#不同进制字符串转换整数int("40",16)int("100",8)int("11101",2)
+
+#正则表达式
+	#re.match与re.search的区别
+		#re.match只匹配字符串的开始，如果字符串开始不符合正则表达式，则匹配失败，函数返回None
+		#re.search匹配整个字符串，直到找到一个匹配。
+	#rep(r'...') r表示字符串为非转义的原始字符串，让编译器忽略反斜杠(忽略转义字符)。如果字符串里没有反斜杠，r可有可无
+	#.匹配任意字符，除了换行符，当re.DOTALL标记被指定时，则可以匹配包括换行符的任意字符。
+	#[...]匹配[]中的字符
+	#[^...]不在[]中的字符
+	#re?匹配最多一个
+	#re+匹配最少一个
+	#re*匹配任意多个

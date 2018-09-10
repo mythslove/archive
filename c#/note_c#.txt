@@ -1,0 +1,38 @@
+#忽略证书
+ServicePointManager.ServerCertificateValidationCallback += (se, cert, chain, sslerror) => {return true;};
+#JsonConvert
+[Serializable]Clazz clazz
+Clazz clazz = JsonConvert.DeserializeObject<Clazz>(str);
+string str = JsonConvert.SerializeObject(clazz, Formatting.Indented)
+using (StreamWriter sw = new StreamWriter(File.Open(url, FileMode.Create)))
+{
+	string jsonStr = JsonConvert.SerializeObject(clazz, Formatting.Indented);
+	sw.Write(jsonStr);
+	sw.Flush();
+}
+#Is64BitOperatingSystem
+try
+{
+	FileManager.UncompressFile(Utils.GetTempPath("sysproxy.exe"),
+		Environment.Is64BitOperatingSystem ? Resources.sysproxy64_exe : Resources.sysproxy_exe);
+}
+catch (IOException e){Logging.LogUsefulException(e);}
+#日期格式化
+DateTime.Now.ToString("yyyyMMddHHmmssfff")
+#问号?运算符
+1.可空类型定义的简写 int?
+C#中null值不能赋值给值类型，如果值类型需要设置可为空则须用:System.Nullable<T> t定义，简写成T? t
+2. null 合并运算符 ??
+如果此运算符的左操作数不为 null，则此运算符将返回左操作数；否则返回右操作数。
+例如:int x?;int y = x ?? -1;
+3.null条件运算符 ?.
+用于在执行成员访问 (?.) 或索引 (?[) 操作之前，测试是否存在 NULL。
+if(a != null)a.x();等效于a?.x();
+
+https://www.cnblogs.com/newstart/archive/2012/09/21/2696884.html
+https://www.2cto.com/kf/201801/713008.html
+https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/generics/generic-classes
+https://blog.csdn.net/qq_18995513/article/details/68925371
+https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/using-statement
+https://github.com/iamGavinZhou/py-captcha-breaking
+https://github.com/seamusic/TicketHelper/blob/master/src/TicketHelper/Program.cs
